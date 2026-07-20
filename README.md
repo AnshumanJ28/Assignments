@@ -45,6 +45,10 @@ Example Results (may vary slightly):
 
 The model demonstrates good predictive performance and captures the relationship between customer attributes and insurance charges.
 
+### Actual vs Predicted Charges
+
+![Actual vs Predicted Scatter Plot](graph.png)
+
 ---
 
 ## Conclusion
