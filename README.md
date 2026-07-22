@@ -126,8 +126,8 @@ Evaluation metrics obtained:
 ---
 
 ## Conclusion
-
 This project developed a Logistic Regression model to predict customer churn in a telecommunications company. After preprocessing the dataset, encoding categorical variables, and training the model, the classifier achieved good predictive performance on unseen data. The analysis indicates that factors such as contract type, tenure, monthly charges, and payment methods significantly influence customer churn. Logistic Regression is simple, interpretable, and computationally efficient, making it a strong baseline model for churn prediction. However, one limitation is that it assumes a linear relationship between the input features and the log-odds of the target variable, which may reduce its performance when the data contains complex non-linear patterns. More advanced models such as Random Forest or XGBoost may achieve higher accuracy.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # (ASS3)Employee Salary Prediction using Polynomial Regression
