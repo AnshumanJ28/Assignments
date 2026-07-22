@@ -128,6 +128,63 @@ Evaluation metrics obtained:
 ## Conclusion
 
 This project developed a Logistic Regression model to predict customer churn in a telecommunications company. After preprocessing the dataset, encoding categorical variables, and training the model, the classifier achieved good predictive performance on unseen data. The analysis indicates that factors such as contract type, tenure, monthly charges, and payment methods significantly influence customer churn. Logistic Regression is simple, interpretable, and computationally efficient, making it a strong baseline model for churn prediction. However, one limitation is that it assumes a linear relationship between the input features and the log-odds of the target variable, which may reduce its performance when the data contains complex non-linear patterns. More advanced models such as Random Forest or XGBoost may achieve higher accuracy.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# (ASS3)Employee Salary Prediction using Polynomial Regression
+
+## Objective
+
+Develop a Polynomial Regression model to predict employee salaries based on their position level. Since salary growth is non-linear, Polynomial Regression is used instead of Linear Regression.
+
+---
+
+## Dataset Link
+
+https://www.kaggle.com/datasets/akram24/position-salaries
+
+---
+
+## Libraries Used
+
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-learn
+
+---
+
+## Methodology
+
+1. Loaded the dataset using Pandas.
+2. Identified the input feature (Level) and target variable (Salary).
+3. Checked for missing values.
+4. Split the dataset into training and testing sets (80:20).
+5. Applied Polynomial Features with Degree = 3.
+6. Trained a Polynomial Regression model.
+7. Predicted salaries for the test dataset.
+8. Evaluated the model using MAE, MSE, and R² Score.
+9. Visualized the original data and Polynomial Regression curve.
+
+---
+
+## Results
+
+Evaluation Metrics:
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- R² Score
+
+### Observations
+
+- Polynomial Regression models the non-linear relationship effectively.
+- The fitted curve closely follows the salary distribution.
+- The model performs significantly better than Linear Regression for this dataset.
+
+---
+
+## Conclusion
+
+Polynomial Regression successfully predicts employee salaries by modeling the non-linear relationship between position level and salary. Compared to Linear Regression, which fits a straight line, Polynomial Regression captures curved trends by introducing polynomial terms. This leads to more accurate predictions, especially for higher position levels where salaries increase rapidly. An important advantage of Polynomial Regression is its flexibility in fitting complex patterns while remaining relatively simple to implement.
 ## Conclusion
 
 Multiple Linear Regression effectively predicts insurance charges using customer demographics and health-related features. Smoking status, age, and BMI are the most influential variables. Although the model performs well, it assumes linear relationships and may not capture complex patterns present in the dataset. More advanced machine learning algorithms can further improve prediction accuracy.
