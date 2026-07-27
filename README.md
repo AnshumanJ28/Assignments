@@ -185,5 +185,49 @@ Evaluation Metrics:
 ## Conclusion
 
 Polynomial Regression successfully predicts employee salaries by modeling the non-linear relationship between position level and salary. Compared to Linear Regression, which fits a straight line, Polynomial Regression captures curved trends by introducing polynomial terms. This leads to more accurate predictions, especially for higher position levels where salaries increase rapidly. An important advantage of Polynomial Regression is its flexibility in fitting complex patterns while remaining relatively simple to implement.
+---
+# Ass 5: IBM HR Analytics Employee Attrition Prediction
 
+## Objective
+
+To predict employee attrition using Decision Tree and Random Forest classification models and compare their performance.
+
+## Dataset Link
+
+https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+
+## Libraries Used
+
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-learn
+
+## Methodology
+
+1. Load dataset
+2. Explore data
+3. Handle missing values
+4. Remove unnecessary columns
+5. Encode categorical variables
+6. Train-test split (80:20)
+7. Train Decision Tree model
+8. Train Random Forest model
+9. Evaluate models
+10. Plot feature importance
+
+## Results
+
+The Random Forest model achieved better performance than the Decision Tree in terms of Accuracy, Precision, Recall, and F1-Score.
+
+## Model Comparison
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+|--------|----------|-----------|--------|----------|
+| Decision Tree | Higher than baseline | Moderate | Moderate | Moderate |
+| Random Forest | Best | Best | Best | Best |
+
+## Conclusion
+
+Random Forest outperformed Decision Tree because it combines multiple trees, reduces overfitting, and provides better generalization. Decision Trees are simple and interpretable but prone to overfitting, whereas Random Forest is more accurate but computationally expensive and less interpretable.
 Multiple Linear Regression effectively predicts insurance charges using customer demographics and health-related features. Smoking status, age, and BMI are the most influential variables. Although the model performs well, it assumes linear relationships and may not capture complex patterns present in the dataset. More advanced machine learning algorithms can further improve prediction accuracy.
