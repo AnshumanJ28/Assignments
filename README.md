@@ -228,6 +228,110 @@ The Random Forest model achieved better performance than the Decision Tree in te
 | Random Forest | Best | Best | Best | Best |
 
 ## Conclusion
+---
+# Assignment 6 – SVM Classification using Open-Meteo API
 
+## Objective
+
+Develop a Support Vector Machine (SVM) classification model to classify weather as **Warm** or **Cool** using meteorological data collected from the Open-Meteo API.
+
+---
+
+## API Documentation
+
+https://open-meteo.com/
+
+---
+
+## Libraries Used
+
+- requests
+- pandas
+- numpy
+- scikit-learn
+
+---
+
+## Methodology
+
+1. Fetch hourly weather data from the Open-Meteo API.
+2. Convert JSON data into a Pandas DataFrame.
+3. Create the target variable:
+   - Warm → Temperature ≥ 25°C
+   - Cool → Temperature < 25°C
+4. Remove unnecessary columns.
+5. Encode the target variable.
+6. Split the dataset into training and testing sets (80:20).
+7. Standardize the features using StandardScaler.
+8. Train an SVM classifier with an RBF kernel.
+9. Evaluate the model using:
+   - Accuracy
+   - Precision
+   - Recall
+   - F1-score
+   - Confusion Matrix
+
+---
+
+## Results
+
+The SVM classifier successfully classified weather into Warm and Cool categories. Performance was evaluated using Accuracy, Precision, Recall, F1-score, and Confusion Matrix.
+
+---
+
+## Conclusion
+
+The SVM model effectively classified weather conditions using meteorological features obtained from the Open-Meteo API. Feature scaling significantly improved model performance because SVM is sensitive to feature magnitudes. The RBF kernel enabled the model to learn non-linear decision boundaries effectively. While SVM provides high accuracy on medium-sized datasets, it can become computationally expensive on large datasets and requires careful parameter tuning.
 Random Forest outperformed Decision Tree because it combines multiple trees, reduces overfitting, and provides better generalization. Decision Trees are simple and interpretable but prone to overfitting, whereas Random Forest is more accurate but computationally expensive and less interpretable.
 Multiple Linear Regression effectively predicts insurance charges using customer demographics and health-related features. Smoking status, age, and BMI are the most influential variables. Although the model performs well, it assumes linear relationships and may not capture complex patterns present in the dataset. More advanced machine learning algorithms can further improve prediction accuracy.
+---
+# Assignment 7 – Mall Customer Segmentation using K-Means Clustering and PCA
+
+## Objective
+
+Develop a K-Means Clustering model to divide mall customers into meaningful groups based on their demographic and spending behavior. Apply Principal Component Analysis (PCA) to visualize the customer segments in two dimensions.
+
+---
+
+## Dataset Link
+
+https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python
+
+---
+
+## Libraries Used
+
+- pandas
+- numpy
+- matplotlib
+- scikit-learn
+
+---
+
+## Methodology
+
+1. Load the Mall Customer Segmentation dataset.
+2. Explore the dataset and identify numerical and categorical features.
+3. Check for missing values.
+4. Remove the CustomerID column.
+5. Encode the Gender column using LabelEncoder.
+6. Standardize the features using StandardScaler.
+7. Use the Elbow Method to determine the optimal number of clusters.
+8. Train the K-Means model using K = 5.
+9. Assign cluster labels to customers.
+10. Apply PCA to reduce the dataset to two principal components.
+11. Visualize the customer clusters and PCA projection.
+
+---
+
+## Results
+
+- The Elbow Method suggested **5** as the optimal number of clusters.
+- K-Means successfully grouped customers into distinct segments based on income and spending patterns.
+- PCA provided a clear two-dimensional visualization of the identified customer groups.
+
+---
+
+## Conclusion
+
+The K-Means clustering model effectively segmented mall customers into meaningful groups that can support targeted marketing and customer relationship strategies. Feature scaling improved clustering performance by ensuring equal importance for all variables. PCA simplified the high-dimensional data into two principal components while preserving most of the variation, making the clusters easier to visualize. Although K-Means is simple and efficient, it requires the number of clusters to be specified beforehand and may be affected by outliers. PCA enhances interpretability by reducing dimensionality without losing significant information.
