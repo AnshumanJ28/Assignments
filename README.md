@@ -335,3 +335,120 @@ https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-p
 ## Conclusion
 
 The K-Means clustering model effectively segmented mall customers into meaningful groups that can support targeted marketing and customer relationship strategies. Feature scaling improved clustering performance by ensuring equal importance for all variables. PCA simplified the high-dimensional data into two principal components while preserving most of the variation, making the clusters easier to visualize. Although K-Means is simple and efficient, it requires the number of clusters to be specified beforehand and may be affected by outliers. PCA enhances interpretability by reducing dimensionality without losing significant information.
+
+---
+# Assignment 8
+## Handwritten Digit Recognition using Artificial Neural Network (ANN)
+
+### Objective
+To develop an Artificial Neural Network (ANN) that classifies handwritten digits (0–9) using the MNIST dataset.
+
+### Dataset Link
+https://www.kaggle.com/datasets/oddrationale/mnist-in-csv
+
+### Libraries Used
+
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- TensorFlow/Keras
+
+### Methodology
+
+1. Load dataset
+2. Data exploration
+3. Normalize pixel values
+4. One-Hot Encode labels
+5. Train-Test Split
+6. Build ANN
+7. Train model
+8. Evaluate model using Accuracy, Confusion Matrix and Classification Report
+
+### Model Architecture
+
+Input Layer (784 Features)
+
+↓
+
+Dense Layer (128 Neurons, ReLU)
+
+↓
+
+Dense Layer (64 Neurons, ReLU)
+
+↓
+
+Output Layer (10 Neurons, Softmax)
+
+### Results
+
+- Test Accuracy: Approximately 97–98%
+- High precision and recall across all digit classes
+- Stable convergence after 10 epochs
+
+### Conclusion
+
+The ANN effectively classified handwritten digits with high accuracy. Hidden layers learned complex image representations automatically, demonstrating the strength of deep learning in image classification tasks.
+---
+# Assignment 9: Cats vs Dogs Image Classification using CNN
+
+## Objective
+
+The objective of this assignment is to develop a Convolutional Neural Network (CNN) model to automatically classify pet images into two categories: **Cats** and **Dogs**. The model is trained using TensorFlow/Keras and evaluated using standard classification metrics.
+
+## Dataset Link
+
+https://www.kaggle.com/datasets/bhavikjikadara/dog-and-cat-classification-dataset
+
+## Libraries Used
+
+* Python
+* NumPy
+* Matplotlib
+* Seaborn
+* TensorFlow / Keras
+* Scikit-learn
+* Pillow (PIL)
+* OS
+
+## Methodology
+
+1. Download and load the Cats vs Dogs dataset.
+2. Display the dataset folder structure and sample images.
+3. Resize all images to **128 × 128** pixels.
+4. Normalize pixel values to the range **0–1**.
+5. Split the dataset into **80% training** and **20% testing** using `ImageDataGenerator`.
+6. Build and train a Convolutional Neural Network (CNN) for **10 epochs**.
+7. Evaluate the model using Accuracy, Precision, Recall, F1-Score, Confusion Matrix, and training graphs.
+
+## CNN Architecture
+
+* Input Image: **128 × 128 × 3**
+* Conv2D (32 filters, 3×3, ReLU)
+* MaxPooling2D (2×2)
+* Conv2D (64 filters, 3×3, ReLU)
+* MaxPooling2D (2×2)
+* Conv2D (128 filters, 3×3, ReLU)
+* MaxPooling2D (2×2)
+* Flatten Layer
+* Dense Layer (128 neurons, ReLU)
+* Output Layer (1 neuron, Sigmoid)
+
+**Compilation**
+
+* Optimizer: Adam
+* Loss Function: Binary Crossentropy
+* Metric: Accuracy
+
+## Results
+
+* Successfully classified images into **Cat** and **Dog** classes.
+* Achieved high test accuracy after 10 training epochs.
+* Generated Precision, Recall, F1-Score, and Confusion Matrix for evaluation.
+* Training and validation accuracy improved steadily while loss decreased over the epochs.
+
+## Conclusion
+
+The Convolutional Neural Network effectively classified cat and dog images with high accuracy. Convolution layers automatically extracted important visual features such as edges, textures, and shapes, while pooling layers reduced feature dimensions and improved computational efficiency. Compared to traditional Artificial Neural Networks, CNNs are more suitable for image classification because they learn spatial features directly from images without manual feature engineering. However, CNNs require large labeled datasets and higher computational resources for training. Overall, the developed model demonstrates the effectiveness of deep learning in solving real-world image classification problems.
