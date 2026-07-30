@@ -18,7 +18,6 @@ This repository contains a collection of Machine Learning and Deep Learning assi
 ├── ASS8.ipynb
 ├── ASS9.ipynb
 ├── README.md
-└── graph.png
 ```
 
 ---
