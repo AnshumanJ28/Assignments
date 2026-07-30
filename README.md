@@ -1,454 +1,165 @@
-# (As1)Medical Insurance Charges Prediction using Multiple Linear Regression
+# Machine Learning & Deep Learning Assignments
 
-## Objective
-
-To develop a Multiple Linear Regression model that predicts medical insurance charges based on customer information such as age, sex, BMI, children, smoking status, and region.
+This repository contains a collection of Machine Learning and Deep Learning assignments completed using Python, Scikit-learn, and TensorFlow/Keras. The assignments cover regression, classification, clustering, neural networks, and computer vision concepts through practical implementations.
 
 ---
 
-## Dataset Link
+## Repository Structure
 
-https://www.kaggle.com/datasets/mirichoi0218/insurance
+```text
+.
+├── Assignment1.ipynb
+├── ASS2.ipynb
+├── ASS3.ipynb
+├── ASS4.ipynb
+├── ASS5.ipynb
+├── ASS6.ipynb
+├── ASS7.ipynb
+├── ASS8.ipynb
+├── ASS9.ipynb
+├── README.md
+└── graph.png
+```
 
 ---
 
-## Libraries Used
+## Technologies Used
 
-- Pandas
+- Python
 - NumPy
-- Matplotlib
-- Scikit-learn
-
----
-
-## Methodology
-
-1. Load the insurance dataset.
-2. Explore numerical and categorical features.
-3. Check for missing values.
-4. Encode categorical variables.
-5. Split data into training and testing sets (80:20).
-6. Train a Multiple Linear Regression model.
-7. Predict insurance charges.
-8. Evaluate using MAE, MSE, and R² Score.
-9. Visualize Actual vs Predicted Charges.
-
----
-
-## Results
-
-Example Results (may vary slightly):
-
-- MAE: 4186.5
-- MSE: 33596915.85
-- R² Score: 0.78
-
-The model demonstrates good predictive performance and captures the relationship between customer attributes and insurance charges.
-
-### Actual vs Predicted Charges
-
-![Actual vs Predicted Scatter Plot](graph.png)
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# (As2)Telco Customer Churn Prediction using Logistic Regression
-
-## Objective
-
-The objective of this project is to develop a Logistic Regression model that predicts whether a telecommunications customer is likely to churn based on demographic details and service usage. Early churn prediction helps telecom companies improve customer retention by identifying customers who are at risk of leaving.
-
----
-
-## Dataset Link
-
-Kaggle Dataset:
-https://www.kaggle.com/datasets/blastchar/telco-customer-churn
-
----
-
-## Libraries Used
-
 - Pandas
-- NumPy
 - Matplotlib
 - Seaborn
 - Scikit-learn
+- TensorFlow / Keras
+- Pillow (PIL)
+- Requests
 
 ---
 
-## Methodology
+## Assignments
 
-### 1. Data Understanding
-- Loaded the Telco Customer Churn dataset using Pandas.
-- Displayed the first five records.
-- Identified numerical features, categorical features, and the target variable (Churn).
-
-### 2. Data Preprocessing
-- Checked for missing values.
-- Replaced blank values in the `TotalCharges` column with NaN and removed missing records.
-- Converted `TotalCharges` to numeric format.
-- Dropped the `customerID` column since it does not contribute to prediction.
-- Encoded categorical variables using Label Encoding.
-- Split the dataset into 80% training data and 20% testing data.
-
-### 3. Model Development
-- Built a Logistic Regression classifier using Scikit-learn.
-- Trained the model on the training dataset.
-- Predicted customer churn on the testing dataset.
-
-### 4. Model Evaluation
-The model was evaluated using:
-- Accuracy Score
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
+| Assignment | Topic | Algorithm |
+|------------|-------|-----------|
+| Assignment 1 | Medical Insurance Charges Prediction | Multiple Linear Regression |
+| Assignment 2 | Telco Customer Churn Prediction | Logistic Regression |
+| Assignment 3 | Employee Salary Prediction | Polynomial Regression |
+| Assignment 4 | Breast Cancer Classification | K-Nearest Neighbors (KNN) |
+| Assignment 5 | Employee Attrition Prediction | Decision Tree & Random Forest |
+| Assignment 6 | Weather Classification | Support Vector Machine (SVM) |
+| Assignment 7 | Mall Customer Segmentation | K-Means Clustering & PCA |
+| Assignment 8 | Handwritten Digit Recognition | Artificial Neural Network (ANN) |
+| Assignment 9 | Cats vs Dogs Image Classification | Convolutional Neural Network (CNN) |
 
 ---
 
-## Results
+## Machine Learning Workflow
 
-The Logistic Regression model successfully classified customers into churn and non-churn categories.
+Each assignment follows a standard machine learning pipeline:
 
-Evaluation metrics obtained:
-- Accuracy Score
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
-
-### Observations
-
-- The model achieved good overall accuracy in predicting customer churn.
-- Customers with month-to-month contracts, higher monthly charges, and shorter tenure were more likely to churn.
-- Logistic Regression performed well for this binary classification problem but may struggle with highly non-linear relationships between features.
-
----
-
-## Conclusion
-This project developed a Logistic Regression model to predict customer churn in a telecommunications company. After preprocessing the dataset, encoding categorical variables, and training the model, the classifier achieved good predictive performance on unseen data. The analysis indicates that factors such as contract type, tenure, monthly charges, and payment methods significantly influence customer churn. Logistic Regression is simple, interpretable, and computationally efficient, making it a strong baseline model for churn prediction. However, one limitation is that it assumes a linear relationship between the input features and the log-odds of the target variable, which may reduce its performance when the data contains complex non-linear patterns. More advanced models such as Random Forest or XGBoost may achieve higher accuracy.
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# (ASS3)Employee Salary Prediction using Polynomial Regression
-
-## Objective
-
-Develop a Polynomial Regression model to predict employee salaries based on their position level. Since salary growth is non-linear, Polynomial Regression is used instead of Linear Regression.
-
----
-
-## Dataset Link
-
-https://www.kaggle.com/datasets/akram24/position-salaries
+1. Data Collection
+2. Data Understanding
+3. Data Preprocessing
+4. Feature Engineering (where applicable)
+5. Model Development
+6. Model Training
+7. Model Evaluation
+8. Performance Visualization
+9. Conclusion
 
 ---
 
 ## Libraries Used
 
+### Data Analysis
 - Pandas
 - NumPy
-- Matplotlib
-- Scikit-learn
 
----
-
-## Methodology
-
-1. Loaded the dataset using Pandas.
-2. Identified the input feature (Level) and target variable (Salary).
-3. Checked for missing values.
-4. Split the dataset into training and testing sets (80:20).
-5. Applied Polynomial Features with Degree = 3.
-6. Trained a Polynomial Regression model.
-7. Predicted salaries for the test dataset.
-8. Evaluated the model using MAE, MSE, and R² Score.
-9. Visualized the original data and Polynomial Regression curve.
-
----
-
-## Results
-
-Evaluation Metrics:
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- R² Score
-
-### Observations
-
-- Polynomial Regression models the non-linear relationship effectively.
-- The fitted curve closely follows the salary distribution.
-- The model performs significantly better than Linear Regression for this dataset.
-
----
-
-## Conclusion
-
-Polynomial Regression successfully predicts employee salaries by modeling the non-linear relationship between position level and salary. Compared to Linear Regression, which fits a straight line, Polynomial Regression captures curved trends by introducing polynomial terms. This leads to more accurate predictions, especially for higher position levels where salaries increase rapidly. An important advantage of Polynomial Regression is its flexibility in fitting complex patterns while remaining relatively simple to implement.
----
-# Ass 5: IBM HR Analytics Employee Attrition Prediction
-
-## Objective
-
-To predict employee attrition using Decision Tree and Random Forest classification models and compare their performance.
-
-## Dataset Link
-
-https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
-
-## Libraries Used
-
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-
-## Methodology
-
-1. Load dataset
-2. Explore data
-3. Handle missing values
-4. Remove unnecessary columns
-5. Encode categorical variables
-6. Train-test split (80:20)
-7. Train Decision Tree model
-8. Train Random Forest model
-9. Evaluate models
-10. Plot feature importance
-
-## Results
-
-The Random Forest model achieved better performance than the Decision Tree in terms of Accuracy, Precision, Recall, and F1-Score.
-
-## Model Comparison
-
-| Model | Accuracy | Precision | Recall | F1 Score |
-|--------|----------|-----------|--------|----------|
-| Decision Tree | Higher than baseline | Moderate | Moderate | Moderate |
-| Random Forest | Best | Best | Best | Best |
-
-## Conclusion
----
-# Assignment 6 – SVM Classification using Open-Meteo API
-
-## Objective
-
-Develop a Support Vector Machine (SVM) classification model to classify weather as **Warm** or **Cool** using meteorological data collected from the Open-Meteo API.
-
----
-
-## API Documentation
-
-https://open-meteo.com/
-
----
-
-## Libraries Used
-
-- requests
-- pandas
-- numpy
-- scikit-learn
-
----
-
-## Methodology
-
-1. Fetch hourly weather data from the Open-Meteo API.
-2. Convert JSON data into a Pandas DataFrame.
-3. Create the target variable:
-   - Warm → Temperature ≥ 25°C
-   - Cool → Temperature < 25°C
-4. Remove unnecessary columns.
-5. Encode the target variable.
-6. Split the dataset into training and testing sets (80:20).
-7. Standardize the features using StandardScaler.
-8. Train an SVM classifier with an RBF kernel.
-9. Evaluate the model using:
-   - Accuracy
-   - Precision
-   - Recall
-   - F1-score
-   - Confusion Matrix
-
----
-
-## Results
-
-The SVM classifier successfully classified weather into Warm and Cool categories. Performance was evaluated using Accuracy, Precision, Recall, F1-score, and Confusion Matrix.
-
----
-
-## Conclusion
-
-The SVM model effectively classified weather conditions using meteorological features obtained from the Open-Meteo API. Feature scaling significantly improved model performance because SVM is sensitive to feature magnitudes. The RBF kernel enabled the model to learn non-linear decision boundaries effectively. While SVM provides high accuracy on medium-sized datasets, it can become computationally expensive on large datasets and requires careful parameter tuning.
-Random Forest outperformed Decision Tree because it combines multiple trees, reduces overfitting, and provides better generalization. Decision Trees are simple and interpretable but prone to overfitting, whereas Random Forest is more accurate but computationally expensive and less interpretable.
-Multiple Linear Regression effectively predicts insurance charges using customer demographics and health-related features. Smoking status, age, and BMI are the most influential variables. Although the model performs well, it assumes linear relationships and may not capture complex patterns present in the dataset. More advanced machine learning algorithms can further improve prediction accuracy.
----
-# Assignment 7 – Mall Customer Segmentation using K-Means Clustering and PCA
-
-## Objective
-
-Develop a K-Means Clustering model to divide mall customers into meaningful groups based on their demographic and spending behavior. Apply Principal Component Analysis (PCA) to visualize the customer segments in two dimensions.
-
----
-
-## Dataset Link
-
-https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python
-
----
-
-## Libraries Used
-
-- pandas
-- numpy
-- matplotlib
-- scikit-learn
-
----
-
-## Methodology
-
-1. Load the Mall Customer Segmentation dataset.
-2. Explore the dataset and identify numerical and categorical features.
-3. Check for missing values.
-4. Remove the CustomerID column.
-5. Encode the Gender column using LabelEncoder.
-6. Standardize the features using StandardScaler.
-7. Use the Elbow Method to determine the optimal number of clusters.
-8. Train the K-Means model using K = 5.
-9. Assign cluster labels to customers.
-10. Apply PCA to reduce the dataset to two principal components.
-11. Visualize the customer clusters and PCA projection.
-
----
-
-## Results
-
-- The Elbow Method suggested **5** as the optimal number of clusters.
-- K-Means successfully grouped customers into distinct segments based on income and spending patterns.
-- PCA provided a clear two-dimensional visualization of the identified customer groups.
-
----
-
-## Conclusion
-
-The K-Means clustering model effectively segmented mall customers into meaningful groups that can support targeted marketing and customer relationship strategies. Feature scaling improved clustering performance by ensuring equal importance for all variables. PCA simplified the high-dimensional data into two principal components while preserving most of the variation, making the clusters easier to visualize. Although K-Means is simple and efficient, it requires the number of clusters to be specified beforehand and may be affected by outliers. PCA enhances interpretability by reducing dimensionality without losing significant information.
-
----
-# Assignment 8
-## Handwritten Digit Recognition using Artificial Neural Network (ANN)
-
-### Objective
-To develop an Artificial Neural Network (ANN) that classifies handwritten digits (0–9) using the MNIST dataset.
-
-### Dataset Link
-https://www.kaggle.com/datasets/oddrationale/mnist-in-csv
-
-### Libraries Used
-
-- Pandas
-- NumPy
+### Data Visualization
 - Matplotlib
 - Seaborn
+
+### Machine Learning
 - Scikit-learn
-- TensorFlow/Keras
 
-### Methodology
+### Deep Learning
+- TensorFlow
+- Keras
 
-1. Load dataset
-2. Data exploration
-3. Normalize pixel values
-4. One-Hot Encode labels
-5. Train-Test Split
-6. Build ANN
-7. Train model
-8. Evaluate model using Accuracy, Confusion Matrix and Classification Report
+### Image Processing
+- Pillow
 
-### Model Architecture
-
-Input Layer (784 Features)
-
-↓
-
-Dense Layer (128 Neurons, ReLU)
-
-↓
-
-Dense Layer (64 Neurons, ReLU)
-
-↓
-
-Output Layer (10 Neurons, Softmax)
-
-### Results
-
-- Test Accuracy: Approximately 97–98%
-- High precision and recall across all digit classes
-- Stable convergence after 10 epochs
-
-### Conclusion
-
-The ANN effectively classified handwritten digits with high accuracy. Hidden layers learned complex image representations automatically, demonstrating the strength of deep learning in image classification tasks.
 ---
-# Assignment 9: Cats vs Dogs Image Classification using CNN
 
-## Objective
+## Learning Outcomes
 
-The objective of this assignment is to develop a Convolutional Neural Network (CNN) model to automatically classify pet images into two categories: **Cats** and **Dogs**. The model is trained using TensorFlow/Keras and evaluated using standard classification metrics.
+This repository demonstrates practical implementation of:
 
-## Dataset Link
+- Multiple Linear Regression
+- Logistic Regression
+- Polynomial Regression
+- K-Nearest Neighbors
+- Decision Tree
+- Random Forest
+- Support Vector Machine
+- K-Means Clustering
+- Principal Component Analysis (PCA)
+- Artificial Neural Networks (ANN)
+- Convolutional Neural Networks (CNN)
 
-https://www.kaggle.com/datasets/bhavikjikadara/dog-and-cat-classification-dataset
+It also covers:
 
-## Libraries Used
+- Data Cleaning
+- Feature Engineering
+- Feature Scaling
+- Label Encoding
+- One-Hot Encoding
+- Model Evaluation
+- Data Visualization
+- Image Classification
 
-* Python
-* NumPy
-* Matplotlib
-* Seaborn
-* TensorFlow / Keras
-* Scikit-learn
-* Pillow (PIL)
-* OS
+---
 
-## Methodology
+## How to Run
 
-1. Download and load the Cats vs Dogs dataset.
-2. Display the dataset folder structure and sample images.
-3. Resize all images to **128 × 128** pixels.
-4. Normalize pixel values to the range **0–1**.
-5. Split the dataset into **80% training** and **20% testing** using `ImageDataGenerator`.
-6. Build and train a Convolutional Neural Network (CNN) for **10 epochs**.
-7. Evaluate the model using Accuracy, Precision, Recall, F1-Score, Confusion Matrix, and training graphs.
+Clone the repository:
 
-## CNN Architecture
+```bash
+git clone https://github.com/AnshumanJ28/ML-Assignments.git
+```
 
-* Input Image: **128 × 128 × 3**
-* Conv2D (32 filters, 3×3, ReLU)
-* MaxPooling2D (2×2)
-* Conv2D (64 filters, 3×3, ReLU)
-* MaxPooling2D (2×2)
-* Conv2D (128 filters, 3×3, ReLU)
-* MaxPooling2D (2×2)
-* Flatten Layer
-* Dense Layer (128 neurons, ReLU)
-* Output Layer (1 neuron, Sigmoid)
+Install the required libraries:
 
-**Compilation**
+```bash
+pip install numpy pandas matplotlib seaborn scikit-learn tensorflow pillow requests
+```
 
-* Optimizer: Adam
-* Loss Function: Binary Crossentropy
-* Metric: Accuracy
+Run any notebook:
 
-## Results
+```bash
+jupyter notebook
+```
 
-* Successfully classified images into **Cat** and **Dog** classes.
-* Achieved high test accuracy after 10 training epochs.
-* Generated Precision, Recall, F1-Score, and Confusion Matrix for evaluation.
-* Training and validation accuracy improved steadily while loss decreased over the epochs.
+or open the desired `.ipynb` file in Jupyter Notebook, VS Code, or Google Colab.
 
-## Conclusion
+---
 
-The Convolutional Neural Network effectively classified cat and dog images with high accuracy. Convolution layers automatically extracted important visual features such as edges, textures, and shapes, while pooling layers reduced feature dimensions and improved computational efficiency. Compared to traditional Artificial Neural Networks, CNNs are more suitable for image classification because they learn spatial features directly from images without manual feature engineering. However, CNNs require large labeled datasets and higher computational resources for training. Overall, the developed model demonstrates the effectiveness of deep learning in solving real-world image classification problems.
+## Repository Highlights
+
+- 9 practical Machine Learning and Deep Learning assignments
+- Covers supervised, unsupervised, and deep learning techniques
+- Includes regression, classification, clustering, ANN, and CNN models
+- Implements complete preprocessing and evaluation pipelines
+- Uses industry-standard Python libraries
+
+---
+
+## Author
+
+**Anshuman Pandey**
+
+Bachelor of Technology (Artificial Intelligence & Machine Learning)
+
+GitHub: **https://github.com/AnshumanJ28**
+
+---
