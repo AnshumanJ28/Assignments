@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Heart Disease Prediction API</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #222; }
+  h1 { color: #b3261e; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  label { font-size: 14px; font-weight: bold; }
+  input { padding: 6px; width: 100%; box-sizing: border-box; }
+  button { grid-column: span 2; padding: 10px; background: #b3261e; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+  #result { margin-top: 20px; padding: 15px; border-radius: 6px; font-weight: bold; display: none; }
+  .positive { background: #ffe0e0; color: #a10000; }
+  .negative { background: #e0ffe4; color: #006414; }
+</style>
+</head>
+<body>
+  <h1>❤️ Heart Disease Prediction API</h1>
+  <p>Enter patient clinical parameters below and click Predict, or call <code>POST /predict</code> directly with JSON.</p>
+  <form id="predict-form">
+    {% for f in features %}
+    <div>
+      <label>{{ f }}</label>
+      <input type="number" step="any" name="{{ f }}" required>
+    </div>
+    {% endfor %}
+    <button type="submit">Predict</button>
+  </form>
+  <div id="result"></div>
+
+<script>
+document.getElementById('predict-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const payload = {};
+  formData.forEach((value, key) => payload[key] = parseFloat(value));
+
+  const res = await fetch('/predict', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  });
+  const data = await res.json();
+  const box = document.getElementById('result');
+  box.style.display = 'block';
+  if (data.error) {
+    box.className = 'positive';
+    box.innerText = 'Error: ' + data.error;
+  } else {
+    box.className = data.prediction.includes('Detected') && !data.prediction.includes('No') ? 'positive' : 'negative';
+    box.innerText = data.prediction + ' (probability: ' + data.probability_of_heart_disease + ')';
+  }
+});
+</script>
+</body>
+</html>
